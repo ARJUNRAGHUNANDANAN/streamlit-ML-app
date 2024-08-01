@@ -93,4 +93,7 @@ classifier.fit(X,y)
 pediction = classifier.predict(input_row)
 prediction_probability = classifier.predict_proba(input_row)
 
-prediction_probability
+df_prediction_probability = pd.DataFrame(prediction_probability)
+df_prediction_probability.columns = ['Adelie', 'Chinstrap', 'Gentoo']
+df_prediction_probability
+
