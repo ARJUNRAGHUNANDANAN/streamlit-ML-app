@@ -95,6 +95,9 @@ prediction_probability = classifier.predict_proba(input_row)
 
 df_prediction_probability = pd.DataFrame(prediction_probability)
 df_prediction_probability.columns = ['Adelie', 'Chinstrap', 'Gentoo']
+df_prediction_probability.rename(columns={0: 'Adelie',
+                                 1: 'Chinstrap',
+                                 2: 'Gentoo'})
 
 st.subheader('Predicted Species')
 df_prediction_probability 
