@@ -15,12 +15,12 @@ with st.expander('Data'):
   df
 
   st.write('**X**')
-  x = df.drop('species', axis=1)
-  x
+  x_raw = df.drop('species', axis=1)
+  x_raw
 
   st.write('**Y**')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
 
 with st.expander('Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
@@ -53,10 +53,20 @@ with st.sidebar:
           'sex': gender}
 
   input_df = pd.DataFrame(data, index=[0])
-  input_penquins = pd.concat([input_df, x], axis=0)
-
+  input_penquins = pd.concat([input_df, x_raw], axis=0)
+  
+  # Convert Categorical Features to Numerical Features using One-Hot Encoding(OHE)
   encode = ['island', 'sex']
   df_penquins = pd.get_dummies(input_penquins, prefix=encode)
+
+  # Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
+  target_mapper = {
+    'Adelie' : 0,
+    'Chinstrap': 1,
+    'Gentoo' : 2
+  }
+def target_encode(val):
+  return target_mapper[val]
                              
 with st.expander('Input Features'): 
   st.write('**Input Penquins**')
@@ -64,7 +74,7 @@ with st.expander('Input Features'):
   st.write('**Combined Data**')
   input_penquins
 
-  # Convert Categorical Values to Numerical Values using One-Hot Encoding(OHE).
-  st.write(**One-Hot Encoded Input Penguin**)
+.
+  st.write('**One-Hot Encoded Input Penguin**')
   input_row = df_penquins[:1]
   input_row
