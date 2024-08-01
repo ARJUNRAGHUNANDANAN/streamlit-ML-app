@@ -54,26 +54,32 @@ with st.sidebar:
 
   input_df = pd.DataFrame(data, index=[0])
   input_penquins = pd.concat([input_df, x_raw], axis=0)
-  
-  # Convert Categorical Features to Numerical Features using One-Hot Encoding(OHE)
-  encode = ['island', 'sex']
-  df_penquins = pd.get_dummies(input_penquins, prefix=encode)
 
-  # Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
-  target_mapper = {
-    'Adelie' : 0,
-    'Chinstrap': 1,
-    'Gentoo' : 2
-  }
-def target_encode(val):
-  return target_mapper[val]
-                             
+# Data Prep
 with st.expander('Input Features'): 
   st.write('**Input Penquins**')
   input_df
   st.write('**Combined Data**')
   input_penquins
+  
+# Convert Categorical Features to Numerical Features using One-Hot Encoding(OHE)
+encode = ['island', 'sex']
+df_penquins = pd.get_dummies(input_penquins, prefix=encode)
 
-  st.write('**One-Hot Encoded Input Penguin**')
+# Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
+target_mapper = {
+  'Adelie' : 0,
+  'Chinstrap': 1,
+  'Gentoo' : 2
+}
+def target_encode(val):
+  return target_mapper[val]
+y=y_raw.apply(taret_encode)
+                             
+
+with st.expander('Data Preperation'):
+  st.write('**One-Hot Encoded Input Penguin [x]**')
   input_row = df_penquins[:1]
   input_row
+  st.write('**Encoded Output Label [y]**')
+  y
