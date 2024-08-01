@@ -74,9 +74,8 @@ target_mapper = {
 }
 def target_encode(val):
   return target_mapper[val]
-y=y_raw.apply(taret_encode)
+y=y_raw.apply(target_encode)
                              
-
 with st.expander('Data Preperation'):
   st.write('**One-Hot Encoded Input Penguin [x]**')
   input_row = df_penquins[:1]
