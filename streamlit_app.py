@@ -54,6 +54,9 @@ with st.sidebar:
 
   input_df = pd.DataFrame(data, index=[0])
   input_penquins = pd.concat([input_df, x], axis=0)
+
+  encode = ['island', 'sex']
+  df_penquins = pd.get_dummies(input_penquins, prefix=encode)
                              
 with st.expander('Input Features'): 
   st.write('**Input Penquins**')
@@ -61,7 +64,7 @@ with st.expander('Input Features'):
   st.write('**Combined Data**')
   input_penquins
 
-# Convert Categorical Values to Numerical Values using One-Hot Encoding(OHE).
-encode = ['island', 'sex']
-df_penquins = pd.get_dummies(input_penquins, prefix=encode)
-df_penquins
+  # Convert Categorical Values to Numerical Values using One-Hot Encoding(OHE).
+  st.write(**One-Hot Encoded Input Penguin**)
+  input_row = df_penquins[:1]
+  input_row
