@@ -95,5 +95,9 @@ prediction_probability = classifier.predict_proba(input_row)
 
 df_prediction_probability = pd.DataFrame(prediction_probability)
 df_prediction_probability.columns = ['Adelie', 'Chinstrap', 'Gentoo']
-df_prediction_probability
+
+st.subheader['Predicted Species']
+df_prediction_probability 
+penquins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo']) 
+st.success(str(penquin_species[prediction][0]))
 
