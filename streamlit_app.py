@@ -52,7 +52,7 @@ with st.sidebar:
           'body_mass_g': body_mass_g,
           'gender': gender}
 
-  input_df = pf.DataFrame(data, index=[0])
+  input_df = pd.DataFrame(data, index=[0])
   input_penquins = pd.concat([input_df, x], axis=0)
                              
 with st.expander('Input Features'): 
