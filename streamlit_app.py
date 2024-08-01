@@ -50,13 +50,18 @@ with st.sidebar:
           'bill_depth_mm': bill_depth_mm,
           'flipper_length_mm': flipper_length_mm,
           'body_mass_g': body_mass_g,
-          'gender': gender}
+          'sex': gender}
 
   input_df = pd.DataFrame(data, index=[0])
   input_penquins = pd.concat([input_df, x], axis=0)
                              
 with st.expander('Input Features'): 
-  st.write('**Input Penquins')
+  st.write('**Input Penquins**')
   input_df
   st.write('**Combined Data**')
   input_penquins
+
+# Convert Categorical Values to Numerical Values using One-Hot Encoding(OHE).
+encode = ['island', 'sex']
+df_penquins = pd.get_dummies(input_penquins, prefix=encode)
+df_penquins
