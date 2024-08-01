@@ -39,10 +39,10 @@ with st.sidebar:
   bill_depth_mm = st.slider('Bill Depth in mm', 13.1, 21.5, 17.16)
   # x['bill_depth_mm'].min(), x['bill_depth_mm'].max(), x['bill_depth_mm'].mean()
 
-  flipper_length_mm = st.slider('Flipper Length in mm', 172,231, 200.96)
+  flipper_length_mm = st.slider('Flipper Length in mm', 172,231, 200)
   # x['flipper_length_mm'].min(), x['flipper_length_mm'].max(), x['flipper_length_mm'].mean()
 
-  body_mass_g = st.slider('Flipper Length in mm', 2700, 6300, 4201.05)
+  body_mass_g = st.slider('Flipper Length in mm', 2700, 6300, 4201)
   # x['body_mass_g'].min(), x['body_mass_g'].max(), x['body_mass_g'].mean()
 
   data = {'island': island, 
