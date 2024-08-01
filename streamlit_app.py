@@ -29,22 +29,22 @@ with st.expander('Visualization'):
 with st.sidebar:
   st.header('Input Features')
   island = st.selectbox('Island', ('Torgersen', 'Biscoe', 'Dream')) 
-  # x['island'].unique() gives 'Torgersen', 'Biscoe', 'Dream'
+  # x_raw['island'].unique() gives 'Torgersen', 'Biscoe', 'Dream'
   
   gender = st.radio('gender', ('male','female'))
-  # x['sex'].unique()
+  # x_raw['sex'].unique()
   
   bill_length_mm = st.slider('Bill Length in mm', 32.1, 59.6, 43.9)
-  # x['bill_length_mm'].min(), x['bill_length_mm'].max(), x['bill_length_mm'].mean()
+  # x_raw['bill_length_mm'].min(), x_raw['bill_length_mm'].max(), x_raw['bill_length_mm'].mean()
 
   bill_depth_mm = st.slider('Bill Depth in mm', 13.1, 21.5, 17.16)
-  # x['bill_depth_mm'].min(), x['bill_depth_mm'].max(), x['bill_depth_mm'].mean()
+  # x_raw['bill_depth_mm'].min(), x_raw['bill_depth_mm'].max(), x_raw['bill_depth_mm'].mean()
 
   flipper_length_mm = st.slider('Flipper Length in mm', 172,231, 200)
-  # x['flipper_length_mm'].min(), x['flipper_length_mm'].max(), x['flipper_length_mm'].mean()
+  # x_raw['flipper_length_mm'].min(), x_raw['flipper_length_mm'].max(), x_raw['flipper_length_mm'].mean()
 
   body_mass_g = st.slider('Flipper Length in mm', 2700, 6300, 4201)
-  # x['body_mass_g'].min(), x['body_mass_g'].max(), x['body_mass_g'].mean()
+  # x_raw['body_mass_g'].min(), x_raw['body_mass_g'].max(), x_raw['body_mass_g'].mean()
 
   data = {'island': island, 
           'bill_length_mm': bill_length_mm,
@@ -66,7 +66,9 @@ with st.expander('Input Features'):
 # Convert Categorical Features to Numerical Features using One-Hot Encoding(OHE)
 encode = ['island', 'sex']
 df_penquins = pd.get_dummies(input_penquins, prefix=encode)
-x =  df_penquins[:1]
+input_row = df_penquins[:1]
+X =  df_penquins[:1]
+
 # Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
 target_mapper = {
   'Adelie' : 0,
@@ -78,15 +80,14 @@ def target_encode(val):
 y=y_raw.apply(target_encode)
                              
 with st.expander('Data Preperation'):
-  st.write('**One-Hot Encoded Input Penguin [x]**')
-  input_row = df_penquins[:1]
+  st.write('**One-Hot Encoded Input Penguin [X]**')
   input_row
   st.write('**Encoded Output Label [y]**')
   y
 
 # Model Training
 classifier = RFC()
-classifier.fit(x,y)
+classifier.fit(X,y)
 
 # Apply Model to make prediction
 pediction = classifier.predict(input_row)
