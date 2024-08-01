@@ -98,6 +98,6 @@ df_prediction_probability.columns = ['Adelie', 'Chinstrap', 'Gentoo']
 
 st.subheader('Predicted Species')
 df_prediction_probability 
-penquins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo']) 
-st.success(str(penquin_species[prediction][0]))
 
+penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
+st.success(str(penguins_species[prediction][0]))
