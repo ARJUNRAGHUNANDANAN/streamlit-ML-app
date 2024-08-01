@@ -45,7 +45,7 @@ with st.sidebar:
   body_mass_g = st.slider('Flipper Length in mm', 2700, 6300, 4201.05)
   # x['body_mass_g'].min(), x['body_mass_g'].max(), x['body_mass_g'].mean()
 
-  data = {'island', island, 
+  data = {'island': island, 
           'bill_length_mm': bill_length_mm,
           'bill_depth_mm': bill_depth_mm,
           'flipper_length_mm': flipper_length_mm,
