@@ -5,9 +5,8 @@ from sklearn.ensemble import RandomForestClassifier as RFC
 
 st.title('🧮 Streamlit Machine Learning App')
 
-st.write('Hello world!')
-
 st.info('This is a Streamlit Cloud Python App that builds a ML Model.')
+st.write('Code by @DataProfessor : Streamlit Youtube Channel Tutorial')
 
 with st.expander('Data'):
   st.write('**Raw Data**')
