@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier as RFC
 
 st.title('🧮 Streamlit Machine Learning App')
 
@@ -65,7 +66,7 @@ with st.expander('Input Features'):
 # Convert Categorical Features to Numerical Features using One-Hot Encoding(OHE)
 encode = ['island', 'sex']
 df_penquins = pd.get_dummies(input_penquins, prefix=encode)
-
+x =  df_penquins[:1]
 # Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
 target_mapper = {
   'Adelie' : 0,
@@ -82,3 +83,13 @@ with st.expander('Data Preperation'):
   input_row
   st.write('**Encoded Output Label [y]**')
   y
+
+# Model Training
+classifier = RFC()
+classifier.fit(x,y)
+
+# Apply Model to make prediction
+pediction = classifier.predict(input_row)
+prediction_probability = classifier.predict_proba(input_row)
+
+prediction_probability
