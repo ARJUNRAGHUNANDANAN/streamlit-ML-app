@@ -74,7 +74,6 @@ with st.expander('Input Features'):
   st.write('**Combined Data**')
   input_penquins
 
-.
   st.write('**One-Hot Encoded Input Penguin**')
   input_row = df_penquins[:1]
   input_row
