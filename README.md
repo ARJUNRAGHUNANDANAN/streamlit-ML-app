@@ -1,25 +1,14 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+#  🧮 Streamlit Machine Learning App
 
-Description of the app ...
+![Made with Streamlit](https://img.shields.io/badge/Made%20with-Streamlit-brightgreen.svg?logo=streamlit) [![Tutorial on Youtube](https://img.shields.io/badge/Tutorial%20on%20YouTube-FF0000.svg?logo=youtube&style=social)](https://youtu.be/LJ6DcLGQ4vY)
+
+This is a project repository created to follow along with the Streamlit Tutorial on making a Machine Learning App with Streamlit and Python.
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pythonmachinelearningapp.streamlit.app/)
 
 ## GitHub Codespaces
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
 
-## Section Heading
-
-This is filler text, please replace this with text for this section.
-
-## Further Reading
-
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
