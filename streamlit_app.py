@@ -67,7 +67,7 @@ with st.expander('Input Features'):
 encode = ['island', 'sex']
 df_penquins = pd.get_dummies(input_penquins, prefix=encode)
 input_row = df_penquins[:1]
-X =  df_penquins[:1]
+X =  df_penquins[1:]
 
 # Convert Categorical Label to Numerical Label using One-Hot Encoding(OHE)
 target_mapper = {
