@@ -9,7 +9,7 @@ st.info('This is a Streamlit Cloud Python App that builds a ML Model.')
 with st.expander('Data'):
   st.write('**Raw Data**')
   # Taken from Github -> dataprofessor -> data -> penguins_cleaned.csv
-  df = pdf.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
   df
 
   st.write('**X**')
