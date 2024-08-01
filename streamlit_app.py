@@ -90,7 +90,7 @@ classifier = RFC()
 classifier.fit(X,y)
 
 # Apply Model to make prediction
-pediction = classifier.predict(input_row)
+prediction = classifier.predict(input_row)
 prediction_probability = classifier.predict_proba(input_row)
 
 df_prediction_probability = pd.DataFrame(prediction_probability)
