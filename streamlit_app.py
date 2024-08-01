@@ -53,7 +53,7 @@ with st.sidebar:
           'gender': gender}
 
   input_df = pf.DataFrame(data, index=[0])
-  input_penquins = pd.concat([input_df, X] axis=0)
+  input_penquins = pd.concat([input_df, x], axis=0)
                              
 with st.expander('Input Features'): 
   st.write('**Input Penquins')
