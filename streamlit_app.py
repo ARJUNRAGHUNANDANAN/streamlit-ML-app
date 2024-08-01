@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
+
 st.title('🧮 Streamlit Machine Learning App')
 
 st.write('Hello world!')
@@ -13,9 +15,12 @@ with st.expander('Data'):
   df
 
   st.write('**X**')
-  x = df.drop('species, axis=1')
+  x = df.drop('species', axis=1)
   x
 
   st.write('**Y**')
   y = df.species
   y
+
+with st.expander('Visualization'):
+  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
